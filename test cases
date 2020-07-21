@@ -1,5 +1,5 @@
 //noauth mode
-Please, install all necessary packages from requirements (pip install -r requirements.txt)
+Please, install all necessary packages from requirements.txt & configure 'pytest' as default test runner.
 https://www.imdb.com/chart/top?ref_=nv_mv_250_6
 
 1. The page opens without any mistakes: *
