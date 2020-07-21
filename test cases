@@ -9,8 +9,10 @@ https://www.imdb.com/chart/top?ref_=nv_mv_250_6
 -- texts
 -- sorting block
 -- all columns elements in chart
--- the number of films on the page is really 250
+-- scroll
 3. Check data consistency (the order of the elements) *
+-- the number of films on the page is really 250
+-- compare data with json/text (some source where catalog data is stored)
 4. Check all types of sorting *?
 -- API test - check that the parameterized URLs return sorted data 
 -- UI test - check that when you choose the appropriate sorting, the correct parameter is substituted in the URL
@@ -32,7 +34,7 @@ https://www.imdb.com/chart/top?ref_=nv_mv_250_6
 8. Сheck navigation - open the moviecard
 UI: when you hover over the moviecard title, a tooltip with the director's name & main actor's names is shown
 - functionality: click on the moviecard - the movie card is open without any unexpected error
-9. Сheck the page load on slow bandwidth (without unexpected errors/cruches, with correct elements buffering) *
+9. Сheck the page load with slow bandwidth (without unexpected errors/cruches, with correct elements buffering)
 10. Cross-browser testing (rendering etc) including mobile version??
 
 
