@@ -1,47 +1,68 @@
-//We need to check auth/noauth mode in some scenarios.
-
+//noauth mode
+Please, install all necessary packages from requirements (pip install -r requirements.txt)
 https://www.imdb.com/chart/top?ref_=nv_mv_250_6
 
 1. The page opens without any mistakes: *
 - check get request / 200 OK response
-2. UI: Check all main elements on page *
+2. UI: Check all main elements on page are display *
 -- headers
 -- texts
 -- sorting block
 -- all columns elements in chart
 -- the number of films on the page is really 250
-3. The page scroll works *
-4. Check data consistency (the order of the elements) *
-5. Check all types of sorting *?
+3. Check data consistency (the order of the elements) *
+4. Check all types of sorting *?
 -- API test - check that the parameterized URLs return sorted data 
 -- UI test - check that when you choose the appropriate sorting, the correct parameter is substituted in the URL
-5.1 IMBD rating = default (Ranking) + desc/acs is working (up/down arrows)
-5.2 Release Date + desc/acs is working (up/down arrows)
-5.3 Number of Ratings + desc/acs is working (up/down arrows)
-5.4 here we need a some preconditions for checking 'your earing' - auth mode --> and this rate is the same witj defaul if user doesn’t have personal rate list 
+4.1 IMBD rating = default (Ranking) + desc/acs is working (up/down arrows)
+4.2 Release Date + desc/acs is working (up/down arrows)
+4.3 Number of Ratings + desc/acs is working (up/down arrows)
+4.4 here we need a some preconditions for checking 'your rating' - auth mode --> and this rate is the same with default sort if user doesn’t have personal rate list
    & this is noauth mode + desc/acs is working (up/down arrows)
-6. Check 'click to add to watchlist' btn 
+5. Check 'click to add to watchlist' btn
 - UI: when you hover over the btn, a tooltip is shown
-- functionality: auth/noauth
-7. Check 'your rating' btn 
+- functionality: auth/noauth - open the moviecard/signIn page
+6. Check 'your rating' btn
 - UI: when you hover over the btn, focus is on the btn
-- functionality: auth/noauth
-8. Check 'share' btn - checking the correct navigations will be enough *
-8.1 copy url - past url - check that you open the same work page
-8.2 fb sharing - fb auth page is open
-8.3 gmail sharing - default mail interface is open
-9. Сheck navigation - open the moviecard 
+- functionality: auth/noauth - the rating bar is open (& user can set any rating)/signIn page
+7. Check 'share' btn - checking the correct navigation will be enough *
+7.1 copy url - past url - check that you open the same work page/copy it
+7.2 fb sharing - fb auth page is open
+7.3 gmail sharing - default mail interface is open
+8. Сheck navigation - open the moviecard
 UI: when you hover over the moviecard title, a tooltip with the director's name & main actor's names is shown
-- functionality: click the moviecard - the movie card is open without any unexpected error
-10. Сheck the page load on slow bandwidth (without unexpected errors/cruches, with correct elements buffering) *
+- functionality: click on the moviecard - the movie card is open without any unexpected error
+9. Сheck the page load on slow bandwidth (without unexpected errors/cruches, with correct elements buffering) *
+10. Cross-browser testing (rendering etc) including mobile version??
 
 
 *?
-Speaking about i.5
+Speaking about i.4
 
-When I worked at Okko we redesign web app, so we have a long story with sorting mistakes - we need to control this from both - frontend should buld a right 
-request * server sould answer correctly. And I'm guessing that if you have a non consistent data on different type of sorting it is not a blocker situation,
+When I worked at Okko we redesign web app, so we have a long story with sorting mistakes - we need to control this from both - frontend should build a right
+request & server should answer correctly. And I'm guessing that if you have a non consistent data on different type of sorting it is not a blocker situation,
 the main point in such situations is that your page id not broken & the default sort is correct.
 
 
+"Release Date" sorting case (4.2)
+Initial Conditions
+- open 'Top Rated Movies' page in noauth mode
+Steps/Description
+1. Click on 'Sort by' list - choose 'Release Date'
+2. Click on 'up/down arrows' btn
+
+Expected ResultsBy step
+The chart should sort into 'Release Date' order by released on date and then the reverse of that order.
+
+
+Moviecard(8)
+Initial Conditions
+- open 'Top Rated Movies' page in noauth mode
+Steps/Description
+1. Hover over the moviecard title
+2. Click on the moviecard
+
+Expected ResultsBy step
+- tooltip with the director's name & main actor's names is shown
+- the movie card is open without any unexpected error
 

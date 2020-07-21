@@ -1,0 +1,11 @@
+actions==1.0.3
+packaging==20.4
+py==1.9.0
+pyparsing==2.4.7
+pyperclip==1.8.0
+pytest==5.4.3
+requests==2.24.0
+selenium==3.141.0
+webdriver-manager==3.2.1
+webdriverdownloader==1.1.0.3
+webdrivermanager==0.8.0
